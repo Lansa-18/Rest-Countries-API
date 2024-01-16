@@ -1,5 +1,7 @@
-$primary: #ff0000;
+@use 'abstracts' as *;
+@use 'base' as *;
+@use 'components' as *;
+@use 'layouts' as *;
+@use 'others' as *;
 
-.test{
-    color: $primary;
-}
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');

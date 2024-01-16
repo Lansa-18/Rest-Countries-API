@@ -1,0 +1,25 @@
+@use "../abstracts/" as *;
+
+.hidden {
+  visibility: hidden;
+}
+
+.special-hidden{
+  display: none;
+}
+
+.not-active{
+  display: none;
+
+  @include mq(640px){
+    display: block;
+  }
+}
+
+.active{
+  display: block;
+
+  @include mq(640px){
+    display: none;
+  }
+}
