@@ -1,8 +1,9 @@
 @use '../abstracts/' as *;
 
 .section-enquiries {
-  margin-top: 4.8rem;
+  margin-top: 4rem;
   @include dflexcomp;
+  position: relative;
 
   .enquiries-input-field {
     @include divStyling1;
@@ -13,25 +14,28 @@
     .input-search-icon {
       width: 1.2rem;
       height: 1.2rem;
-    //   margin-right: 1rem;
+      //   margin-right: 1rem;
     }
 
     .enquiries-input {
       background-color: $dark-mode-elements;
-      padding: 1.9rem 0;
+      padding: 2rem 0;
       border: $dark-mode-elements;
       outline: none;
       width: 80%;
-      color: white
+      color: white;
     }
   }
 
   .enquiries-filter {
     @include dflexhalf;
-    justify-content: space-around;
+    justify-content: space-between;
     @include divStyling1;
-    padding: 1.9rem 0;
-    width: 15%;
+    padding: 1.9rem 2.2rem 1.9rem 2.4rem;
+    width: 18%;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
 
     .enquiries-filter-icon {
       width: 1.2rem;

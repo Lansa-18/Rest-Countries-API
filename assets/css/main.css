@@ -108,11 +108,32 @@ main {
   margin-top: 3.5rem;
 }
 
+.filter__dropdown {
+  padding: 1.6rem 0 1.6rem 2.4rem;
+  position: absolute;
+  top: 6rem;
+  right: 0;
+  background-color: hsl(209, 23%, 22%);
+  border-radius: 0.5rem;
+  box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.05);
+  width: 18%;
+}
+.filter__dropdown-item {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.filter__dropdown-item:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
 .section-enquiries {
-  margin-top: 4.8rem;
+  margin-top: 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 .section-enquiries .enquiries-input-field {
   background-color: hsl(209, 23%, 22%);
@@ -129,7 +150,7 @@ main {
 }
 .section-enquiries .enquiries-input-field .enquiries-input {
   background-color: hsl(209, 23%, 22%);
-  padding: 1.9rem 0;
+  padding: 2rem 0;
   border: hsl(209, 23%, 22%);
   outline: none;
   width: 80%;
@@ -138,12 +159,15 @@ main {
 .section-enquiries .enquiries-filter {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: hsl(209, 23%, 22%);
   border-radius: 0.5rem;
   box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.05);
-  padding: 1.9rem 0;
-  width: 15%;
+  padding: 1.9rem 2.2rem 1.9rem 2.4rem;
+  width: 18%;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 400;
 }
 .section-enquiries .enquiries-filter .enquiries-filter-icon {
   width: 1.2rem;
