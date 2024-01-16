@@ -111,7 +111,7 @@ main {
 .filter__dropdown {
   padding: 1.6rem 0 1.6rem 2.4rem;
   position: absolute;
-  top: 6rem;
+  top: 6.2rem;
   right: 0;
   background-color: hsl(209, 23%, 22%);
   border-radius: 0.5rem;
@@ -170,8 +170,8 @@ main {
   font-weight: 400;
 }
 .section-enquiries .enquiries-filter .enquiries-filter-icon {
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 /*# sourceMappingURL=main.css.map */
