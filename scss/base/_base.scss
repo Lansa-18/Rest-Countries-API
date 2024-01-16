@@ -34,3 +34,7 @@ body {
   background-color: $dark-mode-bg;
   font-family: 'Nunito Sans', sans-serif;
 }
+
+main{
+  @include m-auto;
+}

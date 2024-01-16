@@ -6,25 +6,33 @@ header {
 }
 header nav {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 90%;
   margin: auto;
-  padding: 2.3rem 0;
+  padding: 2rem 0;
 }
 header nav .div-left {
-  color: #fff;
   font-family: Nunito Sans;
   font-size: 2.4rem;
-  font-style: normal;
   font-weight: 800;
+  font-style: normal;
   line-height: normal;
-  flex-basis: 50%;
+  flex-basis: 80%;
 }
 header nav .div-right {
-  flex-basis: 40%;
+  flex-basis: 12%;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  font-weight: 600;
+  font-style: normal;
+  line-height: normal;
 }
 header nav .div-right .theme-icon {
-  border: 1px solid red;
+  width: 2rem;
+  height: 2rem;
 }
 
 *,
@@ -61,6 +69,11 @@ body {
   font-family: "Nunito Sans", sans-serif;
 }
 
+main {
+  width: 90%;
+  margin: auto;
+}
+
 .hidden {
   visibility: hidden;
 }
@@ -92,6 +105,12 @@ body {
   margin: auto;
   text-align: center;
   margin-top: 3.5rem;
+}
+
+.section-enquiries {
+  border: 1px solid red;
+  margin-top: 4.8rem;
+  display: flex;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -5,28 +5,36 @@ header {
   width: 100%;
   background-color: $dark-mode-elements;
   color: $light-mode-elements;
+  // border: 1px solid yellow;
 
   nav {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     @include m-auto;
-    padding: 2.3rem 0;
+    padding: 2rem 0;
 
     .div-left {
-      color: #fff;
       font-family: Nunito Sans;
       font-size: 2.4rem;
-      font-style: normal;
       font-weight: 800;
-      line-height: normal;
-      flex-basis: 50%;
+      @include textBasic;
+      flex-basis: 80%;
+      // border: 1px solid blue;
     }
 
     .div-right {
-      flex-basis: 40%;
-      display: flex;
+      flex-basis: 12%;
+      @include dflexcomp;
+      font-size: 1.6rem;
+      font-weight: 600;
+      @include textBasic;
+      // border: 1px solid red;
 
-      .theme-icon{
-        border: 1px solid red;
+      .theme-icon {
+        // border: 1px solid blue;
+        width: 2rem;
+        height: 2rem;
       }
     }
   }
