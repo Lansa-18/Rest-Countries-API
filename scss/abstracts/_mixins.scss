@@ -25,7 +25,7 @@ $breakpoints: (
 }
 
 @mixin m-auto {
-  width: 85%;
+  width: 90%;
   margin: auto;
 }
 
@@ -58,11 +58,11 @@ $breakpoints: (
   width: 31.5rem;
   height: 17.5rem;
 
-  @include mq(land-phone){
+  @include mq(land-phone) {
     width: 30rem;
   }
 
-  @include mq(640px){
+  @include mq(640px) {
     width: 27.5rem;
     height: 16.5rem;
   }

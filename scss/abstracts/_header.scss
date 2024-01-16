@@ -1,13 +1,33 @@
 @use '../abstracts/variables' as *;
-header{
+@use '../abstracts/mixins' as *;
 
-    nav{
-        background-color: $dark-mode-elements;
-        width: 40rem;
-        height: 40rem;
-    
-        // .div-left{
-        //     color: red;
-        // }
+header {
+  width: 100%;
+  background-color: $dark-mode-elements;
+  color: $light-mode-elements;
+
+  nav {
+    display: flex;
+    @include m-auto;
+    padding: 2.3rem 0;
+
+    .div-left {
+      color: #fff;
+      font-family: Nunito Sans;
+      font-size: 2.4rem;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+      flex-basis: 50%;
     }
+
+    .div-right {
+      flex-basis: 40%;
+      display: flex;
+
+      .theme-icon{
+        border: 1px solid red;
+      }
+    }
+  }
 }
