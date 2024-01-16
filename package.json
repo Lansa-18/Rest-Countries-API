@@ -1,0 +1,17 @@
+{
+  "name": "rest-countries",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start-sass": "sass --watch scss:assets/css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.69.7"
+  }
+}
