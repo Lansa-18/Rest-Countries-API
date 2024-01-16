@@ -1,0 +1,13 @@
+@use '../abstracts/variables' as *;
+header{
+
+    nav{
+        background-color: $dark-mode-elements;
+        width: 40rem;
+        height: 40rem;
+    
+        // .div-left{
+        //     color: red;
+        // }
+    }
+}
