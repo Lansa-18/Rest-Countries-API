@@ -177,17 +177,20 @@ main {
 .countries-grid-container {
   border: 1px solid red;
   margin-top: 4rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  row-gap: 2rem;
+  column-gap: 2.5rem;
 }
 .countries-grid-container .country {
   background-color: hsl(209, 23%, 22%);
   font-size: 1.8rem;
-  width: 25rem;
+  height: 30rem;
   border-radius: 0.7rem;
 }
 .countries-grid-container .country .country__img {
-  width: 25rem;
-  height: 15.5rem;
+  width: 100%;
+  height: 13.5rem;
   object-fit: cover;
   background-color: #eee;
   border-top-left-radius: 0.7rem;
