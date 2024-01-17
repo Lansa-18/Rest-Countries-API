@@ -199,7 +199,6 @@ main {
 }
 
 .countries-grid-container {
-  border: 1px solid red;
   margin-top: 4rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
