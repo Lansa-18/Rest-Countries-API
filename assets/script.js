@@ -10,9 +10,9 @@ const countriesContainer = document.querySelector('.countries-grid-container');
 const getCountries = async () => {
   const response = await fetch('./data.json');
   const datas = await response.json();
-  datas.forEach((data) => {
+  datas.forEach(data => {
     displayCountries(data);
-  })
+  });
 };
 
 const displayCountries = data => {
@@ -27,6 +27,6 @@ const displayCountries = data => {
         </div>
     </article>
     `;
-    countriesContainer.insertAdjacentHTML('beforeend', html);
+  countriesContainer.insertAdjacentHTML('beforeend', html);
 };
 getCountries();
