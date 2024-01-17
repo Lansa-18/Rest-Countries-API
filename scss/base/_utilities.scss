@@ -23,3 +23,27 @@
     display: none;
   }
 }
+
+.dark-mode-elements {
+  color: $dark-mode-elements;
+}
+
+.dark-bg{
+  background-color: $dark-mode-bg;
+}
+
+.dark-mode-text {
+  color: $dark-mode-text;
+}
+
+.light-mode-elements {
+  color: $light-mode-elements;
+}
+
+.light-mode-text {
+  color: $light-mode-text;
+}
+
+.light-mode-bg{
+  background-color: $light-mode-bg;
+}
