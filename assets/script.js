@@ -10,6 +10,11 @@ const countriesContainer = document.querySelector('.countries-grid-container');
 const getCountries = async () => {
   const response = await fetch('./data.json');
   const datas = await response.json();
+
+  // sorting the data alphabetically by country name
+  datas.sort((a,b) => a.name.localeCompare(b.name)) 
+
+  // Displaying the data
   datas.forEach(data => {
     displayCountries(data);
   });
@@ -29,4 +34,8 @@ const displayCountries = data => {
     `;
   countriesContainer.insertAdjacentHTML('beforeend', html);
 };
+
+const arrangingAlphabetically = () => {
+
+}
 getCountries();
