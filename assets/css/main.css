@@ -174,4 +174,49 @@ main {
   height: 2rem;
 }
 
+.countries-grid-container {
+  border: 1px solid red;
+  margin-top: 4rem;
+  display: flex;
+}
+.countries-grid-container .country {
+  background-color: hsl(209, 23%, 22%);
+  font-size: 1.8rem;
+  width: 25rem;
+  border-radius: 0.7rem;
+}
+.countries-grid-container .country .country__img {
+  width: 25rem;
+  height: 15.5rem;
+  object-fit: cover;
+  background-color: #eee;
+  border-top-left-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
+  display: block;
+}
+.countries-grid-container .country .country__data {
+  padding: 2.4rem 0rem 3rem 2.4rem;
+}
+.countries-grid-container .country .country__name {
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 2.6rem;
+  margin-bottom: 0.7rem;
+}
+.countries-grid-container .country .country__row {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  font-style: normal;
+  font-weight: 300;
+}
+.countries-grid-container .country .country__row:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.countries-grid-container .country .country__row span {
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-weight: 600;
+}
+
 /*# sourceMappingURL=main.css.map */

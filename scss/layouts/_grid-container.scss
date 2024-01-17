@@ -1,0 +1,54 @@
+@use '../abstracts/' as *;
+
+.countries-grid-container {
+  border: 1px solid red;
+  margin-top: 4rem;
+  display: flex;
+
+  .country {
+    background-color: $dark-mode-elements;
+    font-size: 1.8rem;
+    width: 25rem;
+    border-radius: 0.7rem;
+    // margin: 0 3rem;
+
+    .country__img {
+      width: 25rem;
+      height: 15.5rem;
+      object-fit: cover;
+      background-color: #eee;
+      border-top-left-radius: 0.7rem;
+      border-top-right-radius: 0.7rem;
+      display: block;
+    }
+
+    .country__data {
+      padding: 2.4rem 0rem 3rem 2.4rem;
+    }
+
+    .country__name {
+      font-size: 1.8rem;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 2.6rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .country__row {
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        font-style: normal;
+        font-weight: 300;
+        
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+
+      & span {
+        display: inline-block;
+        margin-right: .5rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
