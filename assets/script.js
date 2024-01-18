@@ -144,6 +144,18 @@ const searchCountries = () => {
 };
 
 // Implementing the filtering by region functionality
+const filterCountries = e => {
+  const region = e.target.textContent;
+  const matchingCountriesData = countriesData.filter(countryData => {
+    return countryData.region === region;
+  });
+
+  // Clearing the countries container
+  countriesContainer.innerHTML = '';
+
+  // Displaying the matching countries
+  matchingCountriesData.forEach(data => displayCountries(data));
+};
 
 // Calling the getCountries function
 getCountries();
@@ -155,3 +167,4 @@ filterIcon.addEventListener('click', () => {
   filterIcon.classList.toggle('rotate180');
 });
 input.addEventListener('input', searchCountries);
+filterDropdown.addEventListener('click', filterCountries);
