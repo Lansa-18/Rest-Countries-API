@@ -1,39 +1,47 @@
-@use "../abstracts/" as *;
+@use '../abstracts/' as *;
 
 .hidden {
   visibility: hidden;
 }
 
-.special-hidden{
+.special-hidden {
   display: none;
 }
 
-.not-active{
+.not-active {
   display: none;
 
-  @include mq(640px){
+  @include mq(640px) {
     display: block;
   }
 }
 
-.active{
+.active {
   display: block;
 
-  @include mq(640px){
+  @include mq(640px) {
     display: none;
   }
 }
 
-.country-dark-mode{
+// .country-dark-mode {
+//   background-color: $dark-mode-elements;
+//   color: $dark-mode-text;
+// }
+
+// .country-light-mode {
+//   background-color: $light-mode-elements;
+//   color: $light-mode-text;
+// }
+
+.dark-mode {
   background-color: $dark-mode-elements;
+  border: $dark-mode-elements;
   color: $dark-mode-text;
 }
 
-.country-light-mode{
+.light-mode {
   background-color: $light-mode-elements;
+  border: $light-mode-elements;
   color: $light-mode-text;
-}
-
-.dark-mode{
-  
 }

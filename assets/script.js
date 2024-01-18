@@ -2,13 +2,19 @@
 console.log('Hello Mr Lansa');
 
 // Getting Html Elements
+const body = document.querySelector('body');
+const header = document.querySelector('header');
+const input = document.querySelector('.enquiries-input')
+const inputField = document.querySelector('.enquiries-input-field');
+const filter = document.querySelector('.enquiries-filter');
+const filterDropdown = document.querySelector('.filter-dropdown');
 const countriesContainer = document.querySelector('.countries-grid-container');
 const themeSwitcher = document.querySelector('.div-right');
 const themeSwitcherDark = document.querySelector('.theme-icon-dark');
 
 
 // FUNCTIONS
-const displayCountries = (data, className = 'country-dark-mode') => {
+const displayCountries = (data, className = 'dark-mode') => {
   const html = `
     <article class="country ${className}">
         <img class="country__img" src="${data.flag}" />
@@ -27,7 +33,7 @@ const displayCountries = (data, className = 'country-dark-mode') => {
 };
 
 const changeThemeItems = () => {
-    
+
     // if () {
         
     // }
