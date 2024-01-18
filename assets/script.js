@@ -11,9 +11,15 @@ const filterDropdown = document.querySelector('.filter__dropdown');
 const countriesContainer = document.querySelector('.countries-grid-container');
 const themeSwitcher = document.querySelector('.div-right');
 const themeSwitcherDark = document.querySelector('.theme-icon-dark');
+const themeIcon = themeSwitcher.querySelector('use');
+const inputIcon = document.querySelector('.input-search-icon-dark');
+const inputSvg = inputIcon.querySelector('use');
+const filterIcon = document.querySelector('.enquiries-filter-icon');
+const filterSvg = filterIcon.querySelector('use');
 
 // GLOBAL VARIABLES
 let currentTheme = 'dark-mode';
+
 // FUNCTIONS
 
 const changeThemeItems = () => {
@@ -22,13 +28,29 @@ const changeThemeItems = () => {
 
 const validateTheme = () => {
   const isDarkMode = body.classList.toggle('dark-mode-bg');
+  const darkSvgTheme = './assets/images/theme-mode-dark.svg#theme-color-dark';
+  const lightSvgTheme =
+    './assets/images/theme-mode-light.svg#theme-color-light';
+  const inputSvgDark = './assets/images/search-icon-dark.svg#search-icon-dark';
+  const inputSvgLight =
+    './assets/images/search-icon-light.svg#search-icon-light';
+  const filterSvgDark =
+    './assets/images/chevron-down-dark.svg#chevron-down-dark';
+  const filterSvgLight =
+    './assets/images/chevron-down-light.svg#chevron-down-light';
 
   if (isDarkMode) {
     body.classList.remove('light-mode-bg');
     currentTheme = 'dark-mode';
+    themeIcon.href.baseVal = darkSvgTheme;
+    inputSvg.href.baseVal = inputSvgDark;
+    filterSvg.href.baseVal = filterSvgDark;
   } else {
     body.classList.add('light-mode-bg');
     currentTheme = 'light-mode';
+    themeIcon.href.baseVal = lightSvgTheme;
+    inputSvg.href.baseVal = inputSvgLight;
+    filterSvg.href.baseVal = filterSvgLight;
   }
 };
 
