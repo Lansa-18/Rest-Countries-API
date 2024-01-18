@@ -7,7 +7,7 @@ const header = document.querySelector('header');
 const input = document.querySelector('.enquiries-input')
 const inputField = document.querySelector('.enquiries-input-field');
 const filter = document.querySelector('.enquiries-filter');
-const filterDropdown = document.querySelector('.filter-dropdown');
+const filterDropdown = document.querySelector('.filter__dropdown');
 const countriesContainer = document.querySelector('.countries-grid-container');
 const themeSwitcher = document.querySelector('.div-right');
 const themeSwitcherDark = document.querySelector('.theme-icon-dark');
@@ -18,7 +18,7 @@ const displayCountries = (data, className = 'dark-mode') => {
   const html = `
     <article class="country ${className}">
         <img class="country__img" src="${data.flag}" />
-        <div class="country__data">
+        <div class="country__data ${className}">
         <h3 class="country__name">${data.name}</h3>
         <p class="country__row"><span>Population:</span>${data.population}</p>
         <p class="country__row"><span>Region:</span>${data.region}</p>
@@ -33,15 +33,12 @@ const displayCountries = (data, className = 'dark-mode') => {
 };
 
 const changeThemeItems = () => {
-    // changeGlobalTheme();
-    // if () {
-        
-    // }
+    changeGlobalTheme();
 };
 
 const changeGlobalTheme = () => {
-    body.classList.toggle('dark-mode');
-    body.classList.toggle('light-mode');
+    body.classList.toggle('dark-mode-bg');
+    body.classList.toggle('light-mode-bg');
     header.classList.toggle('dark-mode');
     header.classList.toggle('light-mode');
     input.classList.toggle('dark-mode');
@@ -52,8 +49,7 @@ const changeGlobalTheme = () => {
     filter.classList.toggle('light-mode');
     filterDropdown.classList.toggle('dark-mode');
     filterDropdown.classList.toggle('light-mode');
-
-
+    // getCountries();
 }
 
 const arrangingAlphabetically = datas => {
