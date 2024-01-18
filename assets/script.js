@@ -19,6 +19,7 @@ const filterSvg = filterIcon.querySelector('use');
 
 // GLOBAL VARIABLES
 let currentTheme = 'dark-mode';
+let countriesData = [];
 
 // FUNCTIONS
 
@@ -113,7 +114,8 @@ const getCountries = async () => {
 
     // Displaying the data
     datas.forEach(data => {
-      //
+      // Pushing the data to the global variable
+      countriesData.push(data);
       displayCountries(data);
     });
   } catch (err) {
@@ -125,6 +127,22 @@ const arrangingAlphabetically = datas => {
   datas.sort((a, b) => a.name.localeCompare(b.name));
 };
 
+// Search Functionality
+const searchCountries = () =>{
+    const inputText = input.value.toLowerCase();
+
+    const matchingCountriesData = countriesData.filter(countryData => {
+        const countryName = countryData.name.toLowerCase();
+        return countryName.includes(inputText);
+    })
+
+    // Clearing the countries container
+    countriesContainer.innerHTML = '';
+
+    // Displaying the matching countries
+    matchingCountriesData.forEach(data => displayCountries(data));
+}
+
 getCountries();
 
 // Event Listeners
@@ -133,3 +151,5 @@ filterIcon.addEventListener('click', () => {
     filterDropdown.classList.toggle('hidden');
     filterIcon.classList.toggle('rotate180');
 });
+
+input.addEventListener('input', searchCountries);
