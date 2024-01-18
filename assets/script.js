@@ -128,28 +128,30 @@ const arrangingAlphabetically = datas => {
 };
 
 // Search Functionality
-const searchCountries = () =>{
-    const inputText = input.value.toLowerCase();
+const searchCountries = () => {
+  const inputText = input.value.toLowerCase();
 
-    const matchingCountriesData = countriesData.filter(countryData => {
-        const countryName = countryData.name.toLowerCase();
-        return countryName.includes(inputText);
-    })
+  const matchingCountriesData = countriesData.filter(countryData => {
+    const countryName = countryData.name.toLowerCase();
+    return countryName.includes(inputText);
+  });
 
-    // Clearing the countries container
-    countriesContainer.innerHTML = '';
+  // Clearing the countries container
+  countriesContainer.innerHTML = '';
 
-    // Displaying the matching countries
-    matchingCountriesData.forEach(data => displayCountries(data));
-}
+  // Displaying the matching countries
+  matchingCountriesData.forEach(data => displayCountries(data));
+};
 
+// Implementing the filtering by region functionality
+
+// Calling the getCountries function
 getCountries();
 
 // Event Listeners
 themeSwitcher.addEventListener('click', changeThemeItems);
 filterIcon.addEventListener('click', () => {
-    filterDropdown.classList.toggle('hidden');
-    filterIcon.classList.toggle('rotate180');
+  filterDropdown.classList.toggle('hidden');
+  filterIcon.classList.toggle('rotate180');
 });
-
 input.addEventListener('input', searchCountries);

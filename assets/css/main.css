@@ -27,6 +27,7 @@ header nav .div-right {
   font-weight: 600;
   font-style: normal;
   line-height: normal;
+  cursor: pointer;
 }
 header nav .div-right .theme-icon-dark {
   width: 2rem;
@@ -129,22 +130,24 @@ main {
 }
 
 .filter__dropdown {
-  padding: 1.2rem 0 1.2rem 2.4rem;
   position: absolute;
   top: 6.2rem;
   right: 0;
   border-radius: 0.5rem;
   box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.05);
-  width: 18%;
+  width: 18.5%;
 }
 .filter__dropdown-item {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
+  cursor: pointer;
+  padding: 0.8rem 0 0.8rem 2.4rem;
+  transition: all 0.3s ease-in-out;
 }
-.filter__dropdown-item:not(:last-child) {
-  margin-bottom: 1.5rem;
+.filter__dropdown-item:hover {
+  background-color: #202C36;
 }
 
 .section-enquiries {
@@ -182,10 +185,15 @@ main {
   font-size: 1.3rem;
   font-style: normal;
   font-weight: 400;
+  transition: all 0.3s ease-in-out;
+}
+.section-enquiries .enquiries-filter:hover {
+  background-color: hsl(200, 30%, 26%);
 }
 .section-enquiries .enquiries-filter .enquiries-filter-icon {
   width: 2rem;
   height: 2rem;
+  cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 

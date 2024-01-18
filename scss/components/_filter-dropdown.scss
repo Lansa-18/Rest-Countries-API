@@ -1,21 +1,23 @@
 @use '../abstracts/' as *;
 
 .filter__dropdown {
-  padding: 1.2rem 0 1.2rem 2.4rem;
   position: absolute;
   top: 6.2rem;
   right: 0;
   @include divStyling1;
-  width: 18%;
+  width: 18.5%;
 
   &-item {
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
+    cursor: pointer;
+    padding: .8rem 0 .8rem 2.4rem;
+    transition: all 0.3s ease-in-out;
 
-    &:not(:last-child) {
-      margin-bottom: 1.5rem;
+    &:hover {
+      background-color: $dark-mode-bg;
     }
   }
 }
