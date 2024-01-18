@@ -20,7 +20,7 @@ const changeThemeItems = () => {
   changeGlobalTheme();
 };
 
-const changeGlobalTheme = () => {
+const validateTheme = () => {
   const isDarkMode = body.classList.toggle('dark-mode-bg');
 
   if (isDarkMode) {
@@ -30,7 +30,9 @@ const changeGlobalTheme = () => {
     body.classList.add('light-mode-bg');
     currentTheme = 'light-mode';
   }
+};
 
+const themeItems = () => {
   header.classList.toggle('dark-mode');
   header.classList.toggle('light-mode');
   input.classList.toggle('dark-mode');
@@ -41,8 +43,10 @@ const changeGlobalTheme = () => {
   filter.classList.toggle('light-mode');
   filterDropdown.classList.toggle('dark-mode');
   filterDropdown.classList.toggle('light-mode');
+};
 
-  // Update the classes of all the countries
+const updateThemeCountries = () => {
+  // Update the class themes of all the countries
   const countries = document.querySelectorAll('.country');
   const countryDatas = document.querySelectorAll('.country__data');
   countries.forEach(country => {
@@ -53,6 +57,12 @@ const changeGlobalTheme = () => {
     countryData.classList.remove('dark-mode', 'light-mode');
     countryData.classList.add(currentTheme);
   });
+};
+
+const changeGlobalTheme = () => {
+  validateTheme();
+  themeItems();
+  updateThemeCountries();
 };
 
 const displayCountries = data => {
