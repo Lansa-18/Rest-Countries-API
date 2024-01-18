@@ -72,7 +72,7 @@ main {
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
 }
 
 .special-hidden {
@@ -95,6 +95,10 @@ main {
   .active {
     display: none;
   }
+}
+
+.rotate180 {
+  transform: rotate(180deg);
 }
 
 .dark-mode {

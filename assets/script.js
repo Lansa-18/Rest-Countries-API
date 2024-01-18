@@ -129,3 +129,7 @@ getCountries();
 
 // Event Listeners
 themeSwitcher.addEventListener('click', changeThemeItems);
+filterIcon.addEventListener('click', () => {
+    filterDropdown.classList.toggle('hidden');
+    filterIcon.classList.toggle('rotate180');
+});

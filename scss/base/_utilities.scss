@@ -1,7 +1,7 @@
 @use '../abstracts/' as *;
 
 .hidden {
-  visibility: hidden;
+  display: none;
 }
 
 .special-hidden {
@@ -24,15 +24,10 @@
   }
 }
 
-// .country-dark-mode {
-//   background-color: $dark-mode-elements;
-//   color: $dark-mode-text;
-// }
+.rotate180 {
+  transform: rotate(180deg);
+}
 
-// .country-light-mode {
-//   background-color: $light-mode-elements;
-//   color: $light-mode-text;
-// }
 
 .dark-mode {
   background-color: $dark-mode-elements;
