@@ -30,7 +30,7 @@ header nav .div-right {
   font-style: normal;
   line-height: normal;
 }
-header nav .div-right .theme-icon {
+header nav .div-right .theme-icon-dark {
   width: 2rem;
   height: 2rem;
 }
@@ -101,28 +101,14 @@ main {
   }
 }
 
-.dark-mode-elements {
-  color: hsl(209, 23%, 22%);
-}
-
-.dark-bg {
-  background-color: #202C36;
-}
-
-.dark-mode-text {
+.country-dark-mode {
+  background-color: hsl(209, 23%, 22%);
   color: hsl(0, 0%, 100%);
 }
 
-.light-mode-elements {
-  color: hsl(0, 0%, 100%);
-}
-
-.light-mode-text {
+.country-light-mode {
+  background-color: hsl(0, 0%, 100%);
   color: hsl(200, 15%, 8%);
-}
-
-.light-mode-bg {
-  background-color: #FAFAFA;
 }
 
 .attribution {
@@ -206,7 +192,6 @@ main {
   column-gap: 2.5rem;
 }
 .countries-grid-container .country {
-  background-color: hsl(209, 23%, 22%);
   font-size: 1.8rem;
   height: 30rem;
   border-radius: 0.7rem;

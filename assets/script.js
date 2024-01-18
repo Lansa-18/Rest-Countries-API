@@ -3,26 +3,14 @@ console.log('Hello Mr Lansa');
 
 // Getting Html Elements
 const countriesContainer = document.querySelector('.countries-grid-container');
+const themeSwitcher = document.querySelector('.div-right');
+const themeSwitcherDark = document.querySelector('.theme-icon-dark');
+
 
 // FUNCTIONS
-
-// Getting Data from Json file
-const getCountries = async () => {
-  const response = await fetch('./data.json');
-  const datas = await response.json();
-
-  // sorting the data alphabetically by country name
-  datas.sort((a,b) => a.name.localeCompare(b.name)) 
-
-  // Displaying the data
-  datas.forEach(data => {
-    displayCountries(data);
-  });
-};
-
-const displayCountries = data => {
+const displayCountries = (data, className = 'country-dark-mode') => {
   const html = `
-    <article class="country">
+    <article class="country ${className}">
         <img class="country__img" src="${data.flag}" />
         <div class="country__data">
         <h3 class="country__name">${data.name}</h3>
@@ -33,9 +21,38 @@ const displayCountries = data => {
     </article>
     `;
   countriesContainer.insertAdjacentHTML('beforeend', html);
+
+//   const country = document.querySelector('.country');
+//   console.log(country);
 };
 
-const arrangingAlphabetically = () => {
+const changeThemeItems = () => {
+    
+    // if () {
+        
+    // }
+};
 
-}
+const arrangingAlphabetically = datas => {
+  datas.sort((a, b) => a.name.localeCompare(b.name));
+};
+
+// Getting Data from Json file
+const getCountries = async () => {
+  const response = await fetch('./data.json');
+  const datas = await response.json();
+
+  // sorting the data alphabetically by country name
+  arrangingAlphabetically(datas);
+
+  // Displaying the data
+  datas.forEach(data => {
+    // 
+    displayCountries(data);
+  });
+};
+
 getCountries();
+
+// Event Listeners
+themeSwitcher.addEventListener('click', changeThemeItems);
