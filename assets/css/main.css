@@ -109,6 +109,14 @@ main {
   color: hsl(200, 15%, 8%);
 }
 
+.dark-mode-bg {
+  background-color: #202C36;
+}
+
+.light-mode-bg {
+  background-color: #FAFAFA;
+}
+
 .attribution {
   width: 70%;
   margin: auto;

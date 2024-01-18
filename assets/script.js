@@ -33,11 +33,28 @@ const displayCountries = (data, className = 'dark-mode') => {
 };
 
 const changeThemeItems = () => {
-
+    // changeGlobalTheme();
     // if () {
         
     // }
 };
+
+const changeGlobalTheme = () => {
+    body.classList.toggle('dark-mode');
+    body.classList.toggle('light-mode');
+    header.classList.toggle('dark-mode');
+    header.classList.toggle('light-mode');
+    input.classList.toggle('dark-mode');
+    input.classList.toggle('light-mode');
+    inputField.classList.toggle('dark-mode');
+    inputField.classList.toggle('light-mode');
+    filter.classList.toggle('dark-mode');
+    filter.classList.toggle('light-mode');
+    filterDropdown.classList.toggle('dark-mode');
+    filterDropdown.classList.toggle('light-mode');
+
+
+}
 
 const arrangingAlphabetically = datas => {
   datas.sort((a, b) => a.name.localeCompare(b.name));
