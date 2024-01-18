@@ -168,3 +168,22 @@ filterIcon.addEventListener('click', () => {
 });
 input.addEventListener('input', searchCountries);
 filterDropdown.addEventListener('click', filterCountries);
+
+let myIntegers = [];
+let isTrue = true;
+
+// for (;;) {
+//   const userInput = prompt("Enter a number or type 'xxx' to stop");
+//   if (userInput === 'xxx') {
+//     break;
+//   } else {
+//     const numFromUser = parseInt(userInput);
+//     myIntegers.push(numFromUser);
+//   }
+// }
+
+
+
+
+
+
