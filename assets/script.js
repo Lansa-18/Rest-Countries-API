@@ -4,7 +4,7 @@ console.log('Hello Mr Lansa');
 // Getting Html Elements
 const body = document.querySelector('body');
 const header = document.querySelector('header');
-const input = document.querySelector('.enquiries-input')
+const input = document.querySelector('.enquiries-input');
 const inputField = document.querySelector('.enquiries-input-field');
 const filter = document.querySelector('.enquiries-filter');
 const filterDropdown = document.querySelector('.filter__dropdown');
@@ -12,8 +12,27 @@ const countriesContainer = document.querySelector('.countries-grid-container');
 const themeSwitcher = document.querySelector('.div-right');
 const themeSwitcherDark = document.querySelector('.theme-icon-dark');
 
-
 // FUNCTIONS
+
+// Getting Data from Json file
+const getCountries = async () => {
+  try {
+    const response = await fetch('./data.json');
+    const datas = await response.json();
+
+    // sorting the data alphabetically by country name
+    arrangingAlphabetically(datas);
+
+    // Displaying the data
+    datas.forEach(data => {
+      //
+      displayCountries(data);
+    });
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 const displayCountries = (data, className = 'dark-mode') => {
   const html = `
     <article class="country ${className}">
@@ -28,47 +47,31 @@ const displayCountries = (data, className = 'dark-mode') => {
     `;
   countriesContainer.insertAdjacentHTML('beforeend', html);
 
-//   const country = document.querySelector('.country');
-//   console.log(country);
+  //   const country = document.querySelector('.country');
+  //   console.log(country);
 };
 
 const changeThemeItems = () => {
-    changeGlobalTheme();
+  changeGlobalTheme();
 };
 
 const changeGlobalTheme = () => {
-    body.classList.toggle('dark-mode-bg');
-    body.classList.toggle('light-mode-bg');
-    header.classList.toggle('dark-mode');
-    header.classList.toggle('light-mode');
-    input.classList.toggle('dark-mode');
-    input.classList.toggle('light-mode');
-    inputField.classList.toggle('dark-mode');
-    inputField.classList.toggle('light-mode');
-    filter.classList.toggle('dark-mode');
-    filter.classList.toggle('light-mode');
-    filterDropdown.classList.toggle('dark-mode');
-    filterDropdown.classList.toggle('light-mode');
-    // getCountries();
-}
+  body.classList.toggle('dark-mode-bg');
+  body.classList.toggle('light-mode-bg');
+  header.classList.toggle('dark-mode');
+  header.classList.toggle('light-mode');
+  input.classList.toggle('dark-mode');
+  input.classList.toggle('light-mode');
+  inputField.classList.toggle('dark-mode');
+  inputField.classList.toggle('light-mode');
+  filter.classList.toggle('dark-mode');
+  filter.classList.toggle('light-mode');
+  filterDropdown.classList.toggle('dark-mode');
+  filterDropdown.classList.toggle('light-mode');
+};
 
 const arrangingAlphabetically = datas => {
   datas.sort((a, b) => a.name.localeCompare(b.name));
-};
-
-// Getting Data from Json file
-const getCountries = async () => {
-  const response = await fetch('./data.json');
-  const datas = await response.json();
-
-  // sorting the data alphabetically by country name
-  arrangingAlphabetically(datas);
-
-  // Displaying the data
-  datas.forEach(data => {
-    // 
-    displayCountries(data);
-  });
 };
 
 getCountries();
