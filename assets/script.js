@@ -18,6 +18,7 @@ const filterIcon = document.querySelector('.enquiries-filter-icon');
 const filterSvg = filterIcon.querySelector('use');
 const detailsContainer = document.querySelector('.details__container');
 const detailsBackBtn = document.querySelector('.back__button');
+const detailsBackBtnSvg = detailsBackBtn.querySelector('use');
 
 // GLOBAL VARIABLES
 let currentTheme = 'dark-mode';
@@ -41,19 +42,22 @@ const validateTheme = () => {
     './assets/images/chevron-down-dark.svg#chevron-down-dark';
   const filterSvgLight =
     './assets/images/chevron-down-light.svg#chevron-down-light';
-
+  const detailsBackBtnSvgDark = './assets/images/back-icon-dark.svg#back-icon-dark';
+  const detailsBackBtnSvgLight = './assets/images/back-icon-light.svg#back-icon-light';
   if (isDarkMode) {
     body.classList.remove('light-mode-bg');
     currentTheme = 'dark-mode';
     themeIcon.href.baseVal = darkSvgTheme;
     inputSvg.href.baseVal = inputSvgDark;
     filterSvg.href.baseVal = filterSvgDark;
+    detailsBackBtnSvg.href.baseVal = detailsBackBtnSvgDark;
   } else {
     body.classList.add('light-mode-bg');
     currentTheme = 'light-mode';
     themeIcon.href.baseVal = lightSvgTheme;
     inputSvg.href.baseVal = inputSvgLight;
     filterSvg.href.baseVal = filterSvgLight;
+    detailsBackBtnSvg.href.baseVal = detailsBackBtnSvgLight;
   }
 };
 
