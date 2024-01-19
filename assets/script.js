@@ -20,6 +20,7 @@ const detailsContainer = document.querySelector('.details__container');
 const detailsBackBtn = document.querySelector('.back__button');
 const detailsBackBtnSvg = detailsBackBtn.querySelector('use');
 const allBorderCountries = document.querySelectorAll('.border__countries--item');
+const dataDetails = document.querySelector('.data__section--content');
 
 // GLOBAL VARIABLES
 let currentTheme = 'dark-mode';
@@ -98,6 +99,8 @@ const updateThemeCountriesDetails = () => {
     borderCountry.classList.remove('dark-mode', 'light-mode');
     borderCountry.classList.add(currentTheme);
   });
+  dataDetails.classList.toggle('dark-mode-text');
+  dataDetails.classList.toggle('light-mode-text');  
 }
 
 const changeGlobalTheme = () => {
