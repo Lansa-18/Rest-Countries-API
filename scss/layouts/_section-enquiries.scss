@@ -1,7 +1,7 @@
 @use '../abstracts/' as *;
 
 .section-enquiries {
-  margin-top: 4rem;
+  padding-top: 4rem;
   @include dflexcomp;
   position: relative;
 

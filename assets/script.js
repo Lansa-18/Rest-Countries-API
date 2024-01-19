@@ -16,6 +16,8 @@ const inputIcon = document.querySelector('.input-search-icon-dark');
 const inputSvg = inputIcon.querySelector('use');
 const filterIcon = document.querySelector('.enquiries-filter-icon');
 const filterSvg = filterIcon.querySelector('use');
+const detailsContainer = document.querySelector('.details__container');
+const detailsBackBtn = document.querySelector('.back__button');
 
 // GLOBAL VARIABLES
 let currentTheme = 'dark-mode';
@@ -66,6 +68,10 @@ const themeItems = () => {
   filter.classList.toggle('light-mode');
   filterDropdown.classList.toggle('dark-mode');
   filterDropdown.classList.toggle('light-mode');
+  detailsContainer.classList.toggle('dark-mode-bg');
+  detailsContainer.classList.toggle('light-mode-bg');
+  detailsBackBtn.classList.toggle('dark-mode');
+  detailsBackBtn.classList.toggle('light-mode');
 };
 
 const updateThemeCountries = () => {
@@ -172,18 +178,13 @@ filterDropdown.addEventListener('click', filterCountries);
 let myIntegers = [];
 let isTrue = true;
 
-// for (;;) {
-//   const userInput = prompt("Enter a number or type 'xxx' to stop");
-//   if (userInput === 'xxx') {
-//     break;
-//   } else {
-//     const numFromUser = parseInt(userInput);
-//     myIntegers.push(numFromUser);
-//   }
-// }
+// do {
+//     const userInput = prompt("Enter a number or type 'xxx' to stop");
+//     const numInput = parseInt(userInput);
+//     if (userInput === numInput) {
+//       const numFromUser = parseInt(userInput);
+//       myIntegers.push(numFromUser);
+//     }
+// } while (userInput !== 'xxx');
 
-
-
-
-
-
+// console.log(myIntegers);
