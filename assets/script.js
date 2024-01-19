@@ -19,7 +19,9 @@ const filterSvg = filterIcon.querySelector('use');
 const detailsContainer = document.querySelector('.details__container');
 const detailsBackBtn = document.querySelector('.back__button');
 const detailsBackBtnSvg = detailsBackBtn.querySelector('use');
-const allBorderCountries = document.querySelectorAll('.border__countries--item');
+const allBorderCountries = document.querySelectorAll(
+  '.border__countries--item'
+);
 const dataDetails = document.querySelector('.data__section--content');
 
 // GLOBAL VARIABLES
@@ -44,8 +46,10 @@ const validateTheme = () => {
     './assets/images/chevron-down-dark.svg#chevron-down-dark';
   const filterSvgLight =
     './assets/images/chevron-down-light.svg#chevron-down-light';
-  const detailsBackBtnSvgDark = './assets/images/back-icon-dark.svg#back-icon-dark';
-  const detailsBackBtnSvgLight = './assets/images/back-icon-light.svg#back-icon-light';
+  const detailsBackBtnSvgDark =
+    './assets/images/back-icon-dark.svg#back-icon-dark';
+  const detailsBackBtnSvgLight =
+    './assets/images/back-icon-light.svg#back-icon-light';
   if (isDarkMode) {
     body.classList.remove('light-mode-bg');
     currentTheme = 'dark-mode';
@@ -100,8 +104,8 @@ const updateThemeCountriesDetails = () => {
     borderCountry.classList.add(currentTheme);
   });
   dataDetails.classList.toggle('dark-mode-text');
-  dataDetails.classList.toggle('light-mode-text');  
-}
+  dataDetails.classList.toggle('light-mode-text');
+};
 
 const changeGlobalTheme = () => {
   validateTheme();
@@ -123,6 +127,54 @@ const displayCountries = data => {
       </article>
       `;
   countriesContainer.insertAdjacentHTML('beforeend', html);
+};
+
+const displayCountriesDetails = data => {
+  const html = `
+    <article class="details__container dark-mode-bg hidden">
+      <section class="details-section">
+        <div class="back__button dark-mode">
+          <svg class="back-arrow-dark">
+            <use
+              xlink:href="./assets/images/back-icon-dark.svg#back-icon-dark"
+            ></use>
+          </svg>
+          Back
+        </div>
+      </section>
+
+      <section class="data__section">
+        <div class="data__section--img">
+          <img src="./assets/images/1280px-Flag_of_Germany.svg.png" alt="" />
+        </div>
+        <div class="data__section--content dark-mode-text">
+          <p class="data__section--content-p">Belgium</p>
+          <div class="content__details">
+            <div class="content__details--rows1">
+              <p class=""><span>Native Name:</span> Belgie</p>
+              <p class=""><span>Population:</span> 11,213,232</p>
+              <p class=""><span>Region:</span> Europe</p>
+              <p class=""><span>Sub Region:</span> Western Europe</p>
+              <p class=""><span>Capita:</span> Brussels</p>
+            </div>
+            <div class="content__details--rows2">
+              <p class=""><span>Top Level Domain:</span> .be</p>
+              <p class=""><span>Currencies:</span> Euro</p>
+              <p class=""><span>Languages:</span> Dutch, French, German</p>
+            </div>
+          </div>
+          <div class="content__border">
+            <p>Border Countries:</p>
+            <div class="border__countries">
+              <div class="border__countries--item dark-mode">France</div>
+              <div class="border__countries--item dark-mode">Germany</div>
+              <div class="border__countries--item dark-mode">Netherlands</div>
+            </div>
+          </div>
+        </div>
+      </section>
+  </article>
+  `;
 };
 
 // Getting Data from Json file
@@ -177,6 +229,11 @@ const filterCountries = e => {
 
   // Displaying the matching countries
   matchingCountriesData.forEach(data => displayCountries(data));
+};
+
+const showCountryDetails = countriesDetails => {
+  const coutriesDetails = document.querySelectorAll('.country');
+  countriesDetails.forEach(country => {});
 };
 
 // Calling the getCountries function

@@ -13,6 +13,13 @@
     font-size: 1.8rem;
     height: 30rem;
     border-radius: 0.7rem;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      // box-shadow: 0rem 0rem 0.7rem 0rem rgba(0, 0, 0, 0.29);
+      cursor: pointer;
+      transform: scale(1.04);
+    }
 
     .country__img {
       width: 100%;
