@@ -16,17 +16,18 @@ const inputIcon = document.querySelector('.input-search-icon-dark');
 const inputSvg = inputIcon.querySelector('use');
 const filterIcon = document.querySelector('.enquiries-filter-icon');
 const filterSvg = filterIcon.querySelector('use');
-const detailsContainer = document.querySelector('.details__container');
-const detailsBackBtn = document.querySelector('.back__button');
-const detailsBackBtnSvg = detailsBackBtn.querySelector('use');
-const allBorderCountries = document.querySelectorAll(
-  '.border__countries--item'
-);
-const dataDetails = document.querySelector('.data__section--content');
+// const detailsContainer = document.querySelector('.details__container');
+// const detailsBackBtn = document.querySelector('.back__button');
+// const detailsBackBtnSvg = detailsBackBtn.querySelector('use');
+// const dataDetails = document.querySelector('.data__section--content');
+// const allBorderCountries = document.querySelectorAll(
+//   '.border__countries--item'
+// );
 
 // GLOBAL VARIABLES
 let currentTheme = 'dark-mode';
 let countriesData = [];
+// let countriesDetails = [];
 
 // FUNCTIONS
 
@@ -46,24 +47,24 @@ const validateTheme = () => {
     './assets/images/chevron-down-dark.svg#chevron-down-dark';
   const filterSvgLight =
     './assets/images/chevron-down-light.svg#chevron-down-light';
-  const detailsBackBtnSvgDark =
-    './assets/images/back-icon-dark.svg#back-icon-dark';
-  const detailsBackBtnSvgLight =
-    './assets/images/back-icon-light.svg#back-icon-light';
+  // const detailsBackBtnSvgDark =
+  //   './assets/images/back-icon-dark.svg#back-icon-dark';
+  // const detailsBackBtnSvgLight =
+  //   './assets/images/back-icon-light.svg#back-icon-light';
   if (isDarkMode) {
     body.classList.remove('light-mode-bg');
     currentTheme = 'dark-mode';
     themeIcon.href.baseVal = darkSvgTheme;
     inputSvg.href.baseVal = inputSvgDark;
     filterSvg.href.baseVal = filterSvgDark;
-    detailsBackBtnSvg.href.baseVal = detailsBackBtnSvgDark;
+    // detailsBackBtnSvg.href.baseVal = detailsBackBtnSvgDark;
   } else {
     body.classList.add('light-mode-bg');
     currentTheme = 'light-mode';
     themeIcon.href.baseVal = lightSvgTheme;
     inputSvg.href.baseVal = inputSvgLight;
     filterSvg.href.baseVal = filterSvgLight;
-    detailsBackBtnSvg.href.baseVal = detailsBackBtnSvgLight;
+    // detailsBackBtnSvg.href.baseVal = detailsBackBtnSvgLight;
   }
 };
 
@@ -78,10 +79,10 @@ const themeItems = () => {
   filter.classList.toggle('light-mode');
   filterDropdown.classList.toggle('dark-mode');
   filterDropdown.classList.toggle('light-mode');
-  detailsContainer.classList.toggle('dark-mode-bg');
-  detailsContainer.classList.toggle('light-mode-bg');
-  detailsBackBtn.classList.toggle('dark-mode');
-  detailsBackBtn.classList.toggle('light-mode');
+  // detailsContainer.classList.toggle('dark-mode-bg');
+  // detailsContainer.classList.toggle('light-mode-bg');
+  // detailsBackBtn.classList.toggle('dark-mode');
+  // detailsBackBtn.classList.toggle('light-mode');
 };
 
 const updateThemeCountries = () => {
@@ -98,20 +99,20 @@ const updateThemeCountries = () => {
   });
 };
 
-const updateThemeCountriesDetails = () => {
-  allBorderCountries.forEach(borderCountry => {
-    borderCountry.classList.remove('dark-mode', 'light-mode');
-    borderCountry.classList.add(currentTheme);
-  });
-  dataDetails.classList.toggle('dark-mode-text');
-  dataDetails.classList.toggle('light-mode-text');
-};
+// const updateThemeCountriesDetails = () => {
+//   allBorderCountries.forEach(borderCountry => {
+//     borderCountry.classList.remove('dark-mode', 'light-mode');
+//     borderCountry.classList.add(currentTheme);
+//   });
+//   dataDetails.classList.toggle('dark-mode-text');
+//   dataDetails.classList.toggle('light-mode-text');
+// };
 
 const changeGlobalTheme = () => {
   validateTheme();
   themeItems();
   updateThemeCountries();
-  updateThemeCountriesDetails();
+  // updateThemeCountriesDetails();
 };
 
 const displayCountries = data => {
@@ -145,22 +146,22 @@ const displayCountriesDetails = data => {
 
       <section class="data__section">
         <div class="data__section--img">
-          <img src="./assets/images/1280px-Flag_of_Germany.svg.png" alt="" />
+          <img src="${data.flag}" alt="" />
         </div>
         <div class="data__section--content dark-mode-text">
-          <p class="data__section--content-p">Belgium</p>
+          <p class="data__section--content-p">${data.name}</p>
           <div class="content__details">
             <div class="content__details--rows1">
-              <p class=""><span>Native Name:</span> Belgie</p>
-              <p class=""><span>Population:</span> 11,213,232</p>
-              <p class=""><span>Region:</span> Europe</p>
-              <p class=""><span>Sub Region:</span> Western Europe</p>
-              <p class=""><span>Capita:</span> Brussels</p>
+              <p class=""><span>Native Name:</span> ${data.nativeName}</p>
+              <p class=""><span>Population:</span> ${data.population}</p>
+              <p class=""><span>Region:</span> ${data.region}</p>
+              <p class=""><span>Sub Region:</span> ${data.subRegion}</p>
+              <p class=""><span>Capital:</span> ${data.capital}</p>
             </div>
             <div class="content__details--rows2">
               <p class=""><span>Top Level Domain:</span> .be</p>
-              <p class=""><span>Currencies:</span> Euro</p>
-              <p class=""><span>Languages:</span> Dutch, French, German</p>
+              <p class=""><span>Currencies:</span> ${data.currencies}</p>
+              <p class=""><span>Languages:</span> ${data.languages}</p>
             </div>
           </div>
           <div class="content__border">
@@ -231,13 +232,26 @@ const filterCountries = e => {
   matchingCountriesData.forEach(data => displayCountries(data));
 };
 
-const showCountryDetails = countriesDetails => {
-  const coutriesDetails = document.querySelectorAll('.country');
-  countriesDetails.forEach(country => {});
-};
 
 // Calling the getCountries function
-getCountries();
+const selectCountries = async () => {
+  try {
+    await getCountries();
+    const countriesDetails = document.querySelectorAll('.country');
+    countriesDetails.forEach(country => {
+      country.addEventListener('click', (e) => {
+        window.location.href = './details.html';
+        // displayCountriesDetails(country);
+        // console.log(`You clicked on ${country}`);
+        // detailsContainer.classList.remove('hidden');
+        // displayCountriesDetails(country);
+      });
+    });
+  } catch (err) {
+    console.error(err);
+  }
+};
+selectCountries();
 
 // Event Listeners
 themeSwitcher.addEventListener('click', changeThemeItems);
@@ -247,6 +261,17 @@ filterIcon.addEventListener('click', () => {
 });
 input.addEventListener('input', searchCountries);
 filterDropdown.addEventListener('click', filterCountries);
+
+// Country Details functionality
+// const countriesDetails = document.querySelectorAll('.country');
+// console.log(countriesDetails);
+// countriesDetails.forEach(country => {
+//   country.addEventListener('click', () => {
+//     console.log(`You clicked on ${country}`);
+//     detailsContainer.classList.remove('hidden');
+//     displayCountriesDetails(country);
+//   });
+// });
 
 let myIntegers = [];
 let isTrue = true;
