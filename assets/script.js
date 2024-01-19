@@ -19,6 +19,7 @@ const filterSvg = filterIcon.querySelector('use');
 const detailsContainer = document.querySelector('.details__container');
 const detailsBackBtn = document.querySelector('.back__button');
 const detailsBackBtnSvg = detailsBackBtn.querySelector('use');
+const allBorderCountries = document.querySelectorAll('.border__countries--item');
 
 // GLOBAL VARIABLES
 let currentTheme = 'dark-mode';
@@ -92,10 +93,18 @@ const updateThemeCountries = () => {
   });
 };
 
+const updateThemeCountriesDetails = () => {
+  allBorderCountries.forEach(borderCountry => {
+    borderCountry.classList.remove('dark-mode', 'light-mode');
+    borderCountry.classList.add(currentTheme);
+  });
+}
+
 const changeGlobalTheme = () => {
   validateTheme();
   themeItems();
   updateThemeCountries();
+  updateThemeCountriesDetails();
 };
 
 const displayCountries = data => {
