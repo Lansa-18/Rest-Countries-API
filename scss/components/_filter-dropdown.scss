@@ -2,10 +2,11 @@
 
 .filter__dropdown {
   position: absolute;
-  top: 6.2rem;
+  top: 10.2rem;
   right: 0;
   @include divStyling1;
   width: 18.5%;
+  // border: 1px solid red;
 
   &-item {
     font-size: 14px;

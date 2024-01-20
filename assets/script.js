@@ -16,13 +16,7 @@ const inputIcon = document.querySelector('.input-search-icon-dark');
 const inputSvg = inputIcon.querySelector('use');
 const filterIcon = document.querySelector('.enquiries-filter-icon');
 const filterSvg = filterIcon.querySelector('use');
-// const detailsContainer = document.querySelector('.details__container');
-// const detailsBackBtn = document.querySelector('.back__button');
-// const detailsBackBtnSvg = detailsBackBtn.querySelector('use');
-// const dataDetails = document.querySelector('.data__section--content');
-// const allBorderCountries = document.querySelectorAll(
-//   '.border__countries--item'
-// );
+
 
 // GLOBAL VARIABLES
 let currentTheme = 'dark-mode';
