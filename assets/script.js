@@ -102,6 +102,30 @@ const changeGlobalTheme = () => {
 //   window.location.href = './details.html';
 // }
 
+const routingCountries = (countryData) => {
+  // Select the newly added country elements
+  const countriesDetails = document.querySelectorAll('.country');
+  console.log(countriesDetails);
+
+  // Add the click event listeners to the country elements
+  countriesDetails.forEach((country, index) => {
+    country.dataset.index = index;
+    country.addEventListener('click', e => {
+      console.log('Clicked');
+      // Get the index from the data attribute
+      const index = country.dataset.index;
+      console.log(index);
+
+      // Save the country data to sessionStorage
+      localStorage.setItem(
+        'countryData',
+        JSON.stringify(countryData[index])
+      );
+      window.location.href = './details.html';
+    });
+  });
+};
+
 const displayCountries = data => {
   const html = `
       <article class="country ${currentTheme}">
@@ -194,25 +218,25 @@ const arrangingAlphabetically = datas => {
 const selectCountries = async () => {
   try {
     await getCountries();
-    const countriesDetails = document.querySelectorAll('.country');
-    countriesDetails.forEach((country, index) => {
-      countriesDetailsArray.push(country);
-      country.dataset.index = index;
-      country.addEventListener('click', e => {
-        console.log('Clicked');
-        // Get the index from the data attribute
-        const index = country.dataset.index;
-        console.log(index);
+    // const countriesDetails = document.querySelectorAll('.country');
+    // countriesDetails.forEach((country, index) => {
+    //   countriesDetailsArray.push(country);
+    //   country.dataset.index = index;
+    //   country.addEventListener('click', e => {
+    //     console.log('Clicked');
+    //     // Get the index from the data attribute
+    //     const index = country.dataset.index;
+    //     console.log(index);
 
-        // Save the country data to sessionStorage
-        localStorage.setItem(
-          'countryData',
-          JSON.stringify(countriesData[index])
-        );
-        window.location.href = './details.html';
-      });
-    });
-    return countriesDetailsArray;
+    //     // Save the country data to sessionStorage
+    //     localStorage.setItem(
+    //       'countryData',
+    //       JSON.stringify(countriesData[index])
+    //     );
+    //     window.location.href = './details.html';
+    //   });
+    // });
+    routingCountries(countriesData);
   } catch (err) {
     console.error(err);
   }
@@ -233,6 +257,8 @@ const searchCountries = () => {
 
   // Displaying the matching countries
   matchingCountriesData.forEach(data => displayCountries(data));
+
+  routingCountries(matchingCountriesData);
 };
 
 // Implementing the filtering by region functionality
@@ -252,23 +278,25 @@ const filterCountries = e => {
   const countriesDetails = document.querySelectorAll('.country');
   console.log(countriesDetails);
 
-  // Add the click event listeners to the country elements
-  countriesDetails.forEach((country, index) => {
-    country.dataset.index = index;
-    country.addEventListener('click', e => {
-      console.log('Clicked');
-      // Get the index from the data attribute
-      const index = country.dataset.index;
-      console.log(index);
+  // // Add the click event listeners to the country elements
+  // countriesDetails.forEach((country, index) => {
+  //   country.dataset.index = index;
+  //   country.addEventListener('click', e => {
+  //     console.log('Clicked');
+  //     // Get the index from the data attribute
+  //     const index = country.dataset.index;
+  //     console.log(index);
 
-      // Save the country data to sessionStorage
-      localStorage.setItem(
-        'countryData',
-        JSON.stringify(matchingCountriesData[index])
-      );
-      window.location.href = './details.html';
-    });
-  });
+  //     // Save the country data to sessionStorage
+  //     localStorage.setItem(
+  //       'countryData',
+  //       JSON.stringify(matchingCountriesData[index])
+  //     );
+  //     window.location.href = './details.html';
+  //   });
+  // });
+
+  routingCountries(matchingCountriesData);
 };
 
 // Event Listeners
