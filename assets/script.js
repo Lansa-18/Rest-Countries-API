@@ -108,7 +108,7 @@ const displayCountries = data => {
           <img class="country__img" src="${data.flag}" />
           <div class="country__data ${currentTheme}">
           <h3 class="country__name">${data.name}</h3>
-          <p class="country__row"><span>Population:</span>${data.population}</p>
+          <p class="country__row"><span>Population:</span>${data.population.toLocaleString()}</p>
           <p class="country__row"><span>Region:</span>${data.region}</p>
           <p class="country__row"><span>Capital:</span>${data.capital}</p>
           </div>

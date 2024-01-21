@@ -41,14 +41,16 @@ const displayCountriesDetails = data => {
                         <p class=""><span>Native Name:</span> ${
                           data.nativeName
                         }</p>
-                        <p class=""><span>Population:</span> ${
-                          data.population
-                        }</p>
+                        <p class=""><span>Population:</span> ${data.population.toLocaleString()}</p>
                         <p class=""><span>Region:</span> ${data.region}</p>
                         <p class=""><span>Sub Region:</span> ${
                           data.subregion
                         }</p>
-                        <p class=""><span>Capital:</span> ${data.capital ? data.capital : `No Capital for ${data.name}`}</p>
+                        <p class=""><span>Capital:</span> ${
+                          data.capital
+                            ? data.capital
+                            : `No Capital for ${data.name}`
+                        }</p>
                     </div>
                     <div class="content__details--rows2">
                         <p class=""><span>Top Level Domain:</span> ${
