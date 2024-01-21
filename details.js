@@ -48,17 +48,25 @@ const displayCountriesDetails = data => {
                         <p class=""><span>Sub Region:</span> ${
                           data.subregion
                         }</p>
-                        <p class=""><span>Capital:</span> ${data.capital}</p>
+                        <p class=""><span>Capital:</span> ${data.capital ? data.capital : `No Capital for ${data.name}`}</p>
                     </div>
                     <div class="content__details--rows2">
                         <p class=""><span>Top Level Domain:</span> ${
                           data.topLevelDomain
                         }</p>
                         <p class=""><span>Currencies:</span> ${
-                          data.currencies[0].name
+                          data.currencies
+                            ? data.currencies
+                                .map(currency => currency.name)
+                                .join(', ')
+                            : `No Currency for ${data.name}`
                         }</p>
                         <p class=""><span>Languages:</span> ${
-                          data.languages[0].name
+                          data.languages
+                            ? data.languages
+                                .map(language => language.name)
+                                .join(', ')
+                            : `No Language for ${data.name}`
                         }</p>
                     </div>
                 </div>
