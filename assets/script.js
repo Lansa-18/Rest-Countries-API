@@ -1,6 +1,4 @@
 'use strict';
-console.log('Hello Mr Lansa');
-
 // Getting Html Elements
 const body = document.querySelector('body');
 const header = document.querySelector('header');
@@ -88,19 +86,6 @@ const changeGlobalTheme = () => {
   themeItems();
   updateThemeCountries();
 };
-
-// const routingCountries = (index) => {
-//   console.log('Clicked');
-//   // Get the index from the data attribute
-//   const index = country.dataset.index;
-
-//   // Save the country data to sessionStorage
-//   localStorage.setItem(
-//     'countryData',
-//     JSON.stringify(countriesData[index])
-//   );
-//   window.location.href = './details.html';
-// }
 
 const routingCountries = (countryData) => {
   // Select the newly added country elements
@@ -259,7 +244,7 @@ const filterCountries = e => {
   // Select the newly added country elements
   const countriesDetails = document.querySelectorAll('.country');
   console.log(countriesDetails);
-  
+
   routingCountries(matchingCountriesData);
 };
 
