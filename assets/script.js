@@ -41,24 +41,19 @@ const validateTheme = () => {
     './assets/images/chevron-down-dark.svg#chevron-down-dark';
   const filterSvgLight =
     './assets/images/chevron-down-light.svg#chevron-down-light';
-  // const detailsBackBtnSvgDark =
-  //   './assets/images/back-icon-dark.svg#back-icon-dark';
-  // const detailsBackBtnSvgLight =
-  //   './assets/images/back-icon-light.svg#back-icon-light';
+
   if (isDarkMode) {
     body.classList.remove('light-mode-bg');
     currentTheme = 'dark-mode';
     themeIcon.href.baseVal = darkSvgTheme;
     inputSvg.href.baseVal = inputSvgDark;
     filterSvg.href.baseVal = filterSvgDark;
-    // detailsBackBtnSvg.href.baseVal = detailsBackBtnSvgDark;
   } else {
     body.classList.add('light-mode-bg');
     currentTheme = 'light-mode';
     themeIcon.href.baseVal = lightSvgTheme;
     inputSvg.href.baseVal = inputSvgLight;
     filterSvg.href.baseVal = filterSvgLight;
-    // detailsBackBtnSvg.href.baseVal = detailsBackBtnSvgLight;
   }
 };
 
@@ -73,10 +68,6 @@ const themeItems = () => {
   filter.classList.toggle('light-mode');
   filterDropdown.classList.toggle('dark-mode');
   filterDropdown.classList.toggle('light-mode');
-  // detailsContainer.classList.toggle('dark-mode-bg');
-  // detailsContainer.classList.toggle('light-mode-bg');
-  // detailsBackBtn.classList.toggle('dark-mode');
-  // detailsBackBtn.classList.toggle('light-mode');
 };
 
 const updateThemeCountries = () => {
@@ -93,14 +84,6 @@ const updateThemeCountries = () => {
   });
 };
 
-// const updateThemeCountriesDetails = () => {
-//   allBorderCountries.forEach(borderCountry => {
-//     borderCountry.classList.remove('dark-mode', 'light-mode');
-//     borderCountry.classList.add(currentTheme);
-//   });
-//   dataDetails.classList.toggle('dark-mode-text');
-//   dataDetails.classList.toggle('light-mode-text');
-// };
 
 const changeGlobalTheme = () => {
   validateTheme();
