@@ -10,6 +10,13 @@ const detailsContainer = document.querySelector('.details__container');
 // GLOBAL VARIABLES
 let currentTheme = 'dark-mode';
 
+// Retrieve the country data from sessionStorage
+const countryData = JSON.parse(localStorage.getItem('countryData'));
+console.log(countryData);
+
+const borderCountries = countryData.borders;
+console.log(borderCountries);
+
 const displayCountriesDetails = data => {
   const html = `
     <section class="details-section">
@@ -31,24 +38,43 @@ const displayCountriesDetails = data => {
                 <p class="data__section--content-p">${data.name}</p>
                 <div class="content__details">
                     <div class="content__details--rows1">
-                        <p class=""><span>Native Name:</span> ${data.nativeName}</p>
-                        <p class=""><span>Population:</span> ${data.population}</p>
+                        <p class=""><span>Native Name:</span> ${
+                          data.nativeName
+                        }</p>
+                        <p class=""><span>Population:</span> ${
+                          data.population
+                        }</p>
                         <p class=""><span>Region:</span> ${data.region}</p>
-                        <p class=""><span>Sub Region:</span> ${data.subregion}</p>
+                        <p class=""><span>Sub Region:</span> ${
+                          data.subregion
+                        }</p>
                         <p class=""><span>Capital:</span> ${data.capital}</p>
                     </div>
                     <div class="content__details--rows2">
-                        <p class=""><span>Top Level Domain:</span> ${data.topLevelDomain}</p>
-                        <p class=""><span>Currencies:</span> ${data.currencies[0].name}</p>
-                        <p class=""><span>Languages:</span> ${data.languages[0].name}</p>
+                        <p class=""><span>Top Level Domain:</span> ${
+                          data.topLevelDomain
+                        }</p>
+                        <p class=""><span>Currencies:</span> ${
+                          data.currencies[0].name
+                        }</p>
+                        <p class=""><span>Languages:</span> ${
+                          data.languages[0].name
+                        }</p>
                     </div>
                 </div>
                 <div class="content__border">
                     <p>Border Countries:</p>
                     <div class="border__countries">
-                        <div class="border__countries--item dark-mode">France</div>
-                        <div class="border__countries--item dark-mode">Germany</div>
-                        <div class="border__countries--item dark-mode">Netherlands</div>
+                        ${
+                          data.borders
+                            ? data.borders
+                                ?.map(
+                                  border =>
+                                    `<div class="border__countries--item dark-mode">${border}</div>`
+                                )
+                                .join('')
+                            : `No Border Countries for ${data.name}`
+                        }
                     </div>
                 </div>
             </div>
@@ -57,11 +83,29 @@ const displayCountriesDetails = data => {
   detailsContainer.insertAdjacentHTML('beforeend', html);
 };
 
-// Retrieve the country data from sessionStorage
-const countryData = JSON.parse(localStorage.getItem('countryData'));
-
+{
+  /* <div class="border__countries--item dark-mode">France</div>
+<div class="border__countries--item dark-mode">Germany</div>
+<div class="border__countries--item dark-mode">Netherlands</div> */
+}
 // Call displayCountriesDetails with the retrieved data
 displayCountriesDetails(countryData);
+
+// const borderCountriesContainer = document.querySelector('.border__countries');
+
+// // Clear the border countries container
+// borderCountriesContainer.innerHTML = '';
+
+// // Loop through the border countries array
+// borderCountries.forEach(borderCountry => {
+//     // Create a new .border__countries--item element
+//     const item = document.createElement('div');
+//     item.classList.add('border__countries--item, dark-mode');
+//     item.textContent = borderCountry;
+
+//     // Add the item to the border countries container
+//     borderCountriesContainer.appendChild(item);
+// })
 
 // FUNCTIONS
 
