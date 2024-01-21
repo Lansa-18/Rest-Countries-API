@@ -332,8 +332,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  width: 100%;
-  border: 1px solid red;
+  width: 70%;
 }
 .data__section .content__border .border__countries--item {
   flex-basis: 13%;
