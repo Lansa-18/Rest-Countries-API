@@ -48,8 +48,8 @@ const themeItems = () => {
 
 const updateThemeCountriesDetails = () => {
   allBorderCountries.forEach(borderCountry => {
-    borderCountry.classList.remove('dark-mode', 'light-mode');
-    borderCountry.classList.add(currentTheme);
+    borderCountry.classList.toggle('dark-mode');
+    borderCountry.classList.toggle('light-mode');
   });
   dataDetails.classList.toggle('dark-mode-text');
   dataDetails.classList.toggle('light-mode-text');
