@@ -20,7 +20,7 @@ const filterSvg = filterIcon.querySelector('use');
 // GLOBAL VARIABLES
 let currentTheme = 'dark-mode';
 let countriesData = [];
-// let countriesDetails = [];
+let countriesDetailsArray = [];
 
 // FUNCTIONS
 
@@ -89,6 +89,19 @@ const changeGlobalTheme = () => {
   updateThemeCountries();
 };
 
+// const routingCountries = (index) => {
+//   console.log('Clicked');
+//   // Get the index from the data attribute
+//   const index = country.dataset.index;
+
+//   // Save the country data to sessionStorage
+//   localStorage.setItem(
+//     'countryData',
+//     JSON.stringify(countriesData[index])
+//   );
+//   window.location.href = './details.html';
+// }
+
 const displayCountries = data => {
   const html = `
       <article class="country ${currentTheme}">
@@ -129,7 +142,7 @@ const displayCountriesDetails = data => {
               <p class=""><span>Native Name:</span> ${data.nativeName}</p>
               <p class=""><span>Population:</span> ${data.population}</p>
               <p class=""><span>Region:</span> ${data.region}</p>
-              <p class=""><span>Sub Region:</span> ${data.subRegion}</p>
+              <p class=""><span>Sub Region:</span> ${data.subregion}</p>
               <p class=""><span>Capital:</span> ${data.capital}</p>
             </div>
             <div class="content__details--rows2">
@@ -177,6 +190,35 @@ const arrangingAlphabetically = datas => {
   datas.sort((a, b) => a.name.localeCompare(b.name));
 };
 
+// Calling the getCountries function
+const selectCountries = async () => {
+  try {
+    await getCountries();
+    const countriesDetails = document.querySelectorAll('.country');
+    countriesDetails.forEach((country, index) => {
+      countriesDetailsArray.push(country);
+      country.dataset.index = index;
+      country.addEventListener('click', e => {
+        console.log('Clicked');
+        // Get the index from the data attribute
+        const index = country.dataset.index;
+        console.log(index);
+
+        // Save the country data to sessionStorage
+        localStorage.setItem(
+          'countryData',
+          JSON.stringify(countriesData[index])
+        );
+        window.location.href = './details.html';
+      });
+    });
+    return countriesDetailsArray;
+  } catch (err) {
+    console.error(err);
+  }
+};
+selectCountries();
+
 // Search Functionality
 const searchCountries = () => {
   const inputText = input.value.toLowerCase();
@@ -205,31 +247,29 @@ const filterCountries = e => {
 
   // Displaying the matching countries
   matchingCountriesData.forEach(data => displayCountries(data));
-};
 
-// Calling the getCountries function
-const selectCountries = async () => {
-  try {
-    await getCountries();
-    const countriesDetails = document.querySelectorAll('.country');
-    console.log(countriesDetails);
-    countriesDetails.forEach((country, index) => {
-      country.addEventListener('click', e => {
-        // Get the index from the data attribute
-        // const index = country.dataset.index;
-        // Save the country data to sessionStorage
-        sessionStorage.setItem(
-          'countryData',
-          JSON.stringify(countriesData[index])
-        );
-        window.location.href = './details.html';
-      });
+  // Select the newly added country elements
+  const countriesDetails = document.querySelectorAll('.country');
+  console.log(countriesDetails);
+
+  // Add the click event listeners to the country elements
+  countriesDetails.forEach((country, index) => {
+    country.dataset.index = index;
+    country.addEventListener('click', e => {
+      console.log('Clicked');
+      // Get the index from the data attribute
+      const index = country.dataset.index;
+      console.log(index);
+
+      // Save the country data to sessionStorage
+      localStorage.setItem(
+        'countryData',
+        JSON.stringify(matchingCountriesData[index])
+      );
+      window.location.href = './details.html';
     });
-  } catch (err) {
-    console.error(err);
-  }
+  });
 };
-selectCountries();
 
 // Event Listeners
 themeSwitcher.addEventListener('click', changeThemeItems);
@@ -239,17 +279,6 @@ filterIcon.addEventListener('click', () => {
 });
 input.addEventListener('input', searchCountries);
 filterDropdown.addEventListener('click', filterCountries);
-
-// Country Details functionality
-// const countriesDetails = document.querySelectorAll('.country');
-// console.log(countriesDetails);
-// countriesDetails.forEach(country => {
-//   country.addEventListener('click', () => {
-//     console.log(`You clicked on ${country}`);
-//     detailsContainer.classList.remove('hidden');
-//     displayCountriesDetails(country);
-//   });
-// });
 
 let myIntegers = [];
 let isTrue = true;

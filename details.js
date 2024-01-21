@@ -58,7 +58,8 @@ const displayCountriesDetails = data => {
 };
 
 // Retrieve the country data from sessionStorage
-const countryData = JSON.parse(sessionStorage.getItem('countryData'));
+const countryData = JSON.parse(localStorage.getItem('countryData'));
+console.log(countryData);
 
 // Call displayCountriesDetails with the retrieved data
 displayCountriesDetails(countryData);
