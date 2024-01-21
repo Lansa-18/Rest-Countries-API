@@ -17,7 +17,6 @@ const inputSvg = inputIcon.querySelector('use');
 const filterIcon = document.querySelector('.enquiries-filter-icon');
 const filterSvg = filterIcon.querySelector('use');
 
-
 // GLOBAL VARIABLES
 let currentTheme = 'dark-mode';
 let countriesData = [];
@@ -84,12 +83,10 @@ const updateThemeCountries = () => {
   });
 };
 
-
 const changeGlobalTheme = () => {
   validateTheme();
   themeItems();
   updateThemeCountries();
-  // updateThemeCountriesDetails();
 };
 
 const displayCountries = data => {
@@ -160,6 +157,7 @@ const getCountries = async () => {
   try {
     const response = await fetch('./data.json');
     const datas = await response.json();
+    console.log(datas);
 
     // sorting the data alphabetically by country name
     arrangingAlphabetically(datas);
@@ -209,19 +207,22 @@ const filterCountries = e => {
   matchingCountriesData.forEach(data => displayCountries(data));
 };
 
-
 // Calling the getCountries function
 const selectCountries = async () => {
   try {
     await getCountries();
     const countriesDetails = document.querySelectorAll('.country');
-    countriesDetails.forEach(country => {
-      country.addEventListener('click', (e) => {
+    console.log(countriesDetails);
+    countriesDetails.forEach((country, index) => {
+      country.addEventListener('click', e => {
+        // Get the index from the data attribute
+        // const index = country.dataset.index;
+        // Save the country data to sessionStorage
+        sessionStorage.setItem(
+          'countryData',
+          JSON.stringify(countriesData[index])
+        );
         window.location.href = './details.html';
-        // displayCountriesDetails(country);
-        // console.log(`You clicked on ${country}`);
-        // detailsContainer.classList.remove('hidden');
-        // displayCountriesDetails(country);
       });
     });
   } catch (err) {
@@ -252,14 +253,3 @@ filterDropdown.addEventListener('click', filterCountries);
 
 let myIntegers = [];
 let isTrue = true;
-
-// do {
-//     const userInput = prompt("Enter a number or type 'xxx' to stop");
-//     const numInput = parseInt(userInput);
-//     if (userInput === numInput) {
-//       const numFromUser = parseInt(userInput);
-//       myIntegers.push(numFromUser);
-//     }
-// } while (userInput !== 'xxx');
-
-// console.log(myIntegers);
