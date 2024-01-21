@@ -39,8 +39,8 @@ const displayCountriesDetails = data => {
                     </div>
                     <div class="content__details--rows2">
                         <p class=""><span>Top Level Domain:</span> ${data.topLevelDomain}</p>
-                        <p class=""><span>Currencies:</span> ${data.currencies}</p>
-                        <p class=""><span>Languages:</span> ${data.languages}</p>
+                        <p class=""><span>Currencies:</span> ${data.currencies[0].name}</p>
+                        <p class=""><span>Languages:</span> ${data.languages[0].name}</p>
                     </div>
                 </div>
                 <div class="content__border">
@@ -59,7 +59,6 @@ const displayCountriesDetails = data => {
 
 // Retrieve the country data from sessionStorage
 const countryData = JSON.parse(localStorage.getItem('countryData'));
-console.log(countryData);
 
 // Call displayCountriesDetails with the retrieved data
 displayCountriesDetails(countryData);
