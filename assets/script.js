@@ -258,4 +258,4 @@ input.addEventListener('input', searchCountries);
 filterDropdown.addEventListener('click', filterCountries);
 
 let myIntegers = [];
-// let isTrue = true;
+let isTrue = true;
