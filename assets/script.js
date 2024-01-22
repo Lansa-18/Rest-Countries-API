@@ -257,5 +257,5 @@ filterIcon.addEventListener('click', () => {
 input.addEventListener('input', searchCountries);
 filterDropdown.addEventListener('click', filterCountries);
 
-let myIntegers = [];
-let isTrue = true;
+// let myIntegers = [];
+// let isTrue = true;
