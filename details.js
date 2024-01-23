@@ -7,6 +7,7 @@ const themeIcon = themeSwitcher.querySelector('use');
 const detailsBody = document.querySelector('body');
 const detailsContainer = document.querySelector('.details__container');
 
+
 // GLOBAL VARIABLES
 let currentTheme = 'dark-mode';
 
@@ -93,29 +94,13 @@ const displayCountriesDetails = data => {
   detailsContainer.insertAdjacentHTML('beforeend', html);
 };
 
-{
-  /* <div class="border__countries--item dark-mode">France</div>
-<div class="border__countries--item dark-mode">Germany</div>
-<div class="border__countries--item dark-mode">Netherlands</div> */
-}
 // Call displayCountriesDetails with the retrieved data
 displayCountriesDetails(countryData);
 
-// const borderCountriesContainer = document.querySelector('.border__countries');
-
-// // Clear the border countries container
-// borderCountriesContainer.innerHTML = '';
-
-// // Loop through the border countries array
-// borderCountries.forEach(borderCountry => {
-//     // Create a new .border__countries--item element
-//     const item = document.createElement('div');
-//     item.classList.add('border__countries--item, dark-mode');
-//     item.textContent = borderCountry;
-
-//     // Add the item to the border countries container
-//     borderCountriesContainer.appendChild(item);
-// })
+const backBtn = document.querySelector('.back__button');
+backBtn.addEventListener('click', () => {
+  window.history.back();
+});
 
 // FUNCTIONS
 

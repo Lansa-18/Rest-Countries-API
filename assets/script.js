@@ -90,7 +90,6 @@ const changeGlobalTheme = () => {
 const routingCountries = (countryData) => {
   // Select the newly added country elements
   const countriesDetails = document.querySelectorAll('.country');
-  console.log(countriesDetails);
 
   // Add the click event listeners to the country elements
   countriesDetails.forEach((country, index) => {
@@ -179,7 +178,6 @@ const getCountries = async () => {
   try {
     const response = await fetch('./data.json');
     const datas = await response.json();
-    console.log(datas);
 
     // sorting the data alphabetically by country name
     arrangingAlphabetically(datas);
