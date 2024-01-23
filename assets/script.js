@@ -239,10 +239,6 @@ const filterCountries = e => {
   // Displaying the matching countries
   matchingCountriesData.forEach(data => displayCountries(data));
 
-  // Select the newly added country elements
-  const countriesDetails = document.querySelectorAll('.country');
-  console.log(countriesDetails);
-
   routingCountries(matchingCountriesData);
 };
 
