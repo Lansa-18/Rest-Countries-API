@@ -17,7 +17,14 @@ header {
       font-weight: 800;
       @include textBasic;
       flex-basis: 80%;
-      // border: 1px solid blue;
+
+      @include mq(640px) {
+        flex-basis: 60%;
+      }
+      
+      @include mq(475px){
+        font-size: 2rem;
+      }
     }
 
     .div-right {
@@ -27,6 +34,20 @@ header {
       font-weight: 600;
       @include textBasic;
       cursor: pointer;
+
+      @include mq(land-phone) {
+        font-size: 2rem;
+        flex-basis: 20%;
+      }
+
+      @include mq(640px) {
+        flex-basis: 25%;
+      }
+
+      @include mq(475px){
+        font-size: 1.4rem;
+        flex-basis: 35%;
+      }
 
       .theme-icon-dark {
         // border: 1px solid blue;

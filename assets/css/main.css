@@ -18,6 +18,16 @@ header nav .div-left {
   line-height: normal;
   flex-basis: 80%;
 }
+@media (max-width: 39.999em) {
+  header nav .div-left {
+    flex-basis: 60%;
+  }
+}
+@media (max-width: 29.679em) {
+  header nav .div-left {
+    font-size: 2rem;
+  }
+}
 header nav .div-right {
   flex-basis: 12%;
   display: flex;
@@ -28,6 +38,23 @@ header nav .div-right {
   font-style: normal;
   line-height: normal;
   cursor: pointer;
+}
+@media (max-width: 47.999em) {
+  header nav .div-right {
+    font-size: 2rem;
+    flex-basis: 20%;
+  }
+}
+@media (max-width: 39.999em) {
+  header nav .div-right {
+    flex-basis: 25%;
+  }
+}
+@media (max-width: 29.679em) {
+  header nav .div-right {
+    font-size: 1.4rem;
+    flex-basis: 35%;
+  }
 }
 header nav .div-right .theme-icon-dark {
   width: 2rem;
