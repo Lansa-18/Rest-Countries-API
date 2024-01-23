@@ -53,7 +53,7 @@ header nav .div-right {
 @media (max-width: 29.679em) {
   header nav .div-right {
     font-size: 1.4rem;
-    flex-basis: 35%;
+    flex-basis: 32%;
   }
 }
 header nav .div-right .theme-icon-dark {
@@ -224,6 +224,22 @@ main {
   font-weight: 400;
   transition: all 0.3s ease-in-out;
 }
+@media (max-width: 54.374em) {
+  .section-enquiries .enquiries-filter {
+    width: 22%;
+  }
+}
+@media (max-width: 47.999em) {
+  .section-enquiries .enquiries-filter {
+    width: 25%;
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 35.999em) {
+  .section-enquiries .enquiries-filter {
+    border: 1px solid red;
+  }
+}
 .section-enquiries .enquiries-filter:hover {
   background-color: hsl(200, 30%, 26%);
 }
@@ -232,6 +248,12 @@ main {
   height: 2rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+}
+@media (max-width: 47.999em) {
+  .section-enquiries .enquiries-filter .enquiries-filter-icon {
+    font-size: 1.1rem;
+    border: 1px solid red;
+  }
 }
 
 .countries-grid-container {
