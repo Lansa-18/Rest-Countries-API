@@ -200,16 +200,16 @@ main {
   width: 30%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  padding: 0 1.5rem;
 }
 .section-enquiries .enquiries-input-field .input-search-icon-dark {
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 .section-enquiries .enquiries-input-field .enquiries-input {
-  padding: 2rem 0;
+  padding: 2rem 0 2rem 1rem;
   outline: none;
-  width: 80%;
+  width: 100%;
 }
 .section-enquiries .enquiries-filter {
   display: flex;
@@ -247,7 +247,6 @@ main {
 }
 @media (max-width: 24.6875em) {
   .section-enquiries .enquiries-filter {
-    border: 1px solid red;
     width: 45%;
   }
 }

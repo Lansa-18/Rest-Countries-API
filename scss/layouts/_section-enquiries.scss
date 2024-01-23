@@ -9,18 +9,20 @@
     @include divStyling1;
     width: 30%;
     @include dflexhalf;
-    justify-content: space-around;
+    padding: 0 1.5rem;
+    // justify-content: space-around;
 
     .input-search-icon-dark {
-      width: 1.2rem;
-      height: 1.2rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      
       //   margin-right: 1rem;
     }
 
     .enquiries-input {
-      padding: 2rem 0;
+      padding: 2rem 0 2rem 1rem;
       outline: none;
-      width: 80%;
+      width: 100%;
     }
   }
 
@@ -53,7 +55,6 @@
     }
     
     @include mq(395px){
-      border: 1px solid red;
       width: 45%;
     }
 
