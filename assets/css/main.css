@@ -237,7 +237,18 @@ main {
 }
 @media (max-width: 35.999em) {
   .section-enquiries .enquiries-filter {
+    width: 30%;
+  }
+}
+@media (max-width: 29.679em) {
+  .section-enquiries .enquiries-filter {
+    width: 35%;
+  }
+}
+@media (max-width: 24.6875em) {
+  .section-enquiries .enquiries-filter {
     border: 1px solid red;
+    width: 45%;
   }
 }
 .section-enquiries .enquiries-filter:hover {
@@ -252,7 +263,6 @@ main {
 @media (max-width: 47.999em) {
   .section-enquiries .enquiries-filter .enquiries-filter-icon {
     font-size: 1.1rem;
-    border: 1px solid red;
   }
 }
 

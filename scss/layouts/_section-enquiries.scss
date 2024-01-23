@@ -45,8 +45,16 @@
     }
     
     @include mq(phone){
+      width: 30%;
+    }
+    
+    @include mq(475px){
+      width: 35%;
+    }
+    
+    @include mq(395px){
       border: 1px solid red;
-      
+      width: 45%;
     }
 
     &:hover {
@@ -61,7 +69,6 @@
 
       @include mq(land-phone){
         font-size: 1.1rem;
-        border: 1px solid red;
       }
     }
   }
