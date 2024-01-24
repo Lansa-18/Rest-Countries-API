@@ -2,6 +2,7 @@
 // Getting Html Elements
 const body = document.querySelector('body');
 const header = document.querySelector('header');
+const themeText = document.querySelector('.theme-text');
 const input = document.querySelector('.enquiries-input');
 const inputField = document.querySelector('.enquiries-input-field');
 const filter = document.querySelector('.enquiries-filter');
@@ -45,12 +46,14 @@ const validateTheme = () => {
     themeIcon.href.baseVal = darkSvgTheme;
     inputSvg.href.baseVal = inputSvgDark;
     filterSvg.href.baseVal = filterSvgDark;
+    themeText.textContent = 'Dark Mode';
   } else {
     body.classList.add('light-mode-bg');
     currentTheme = 'light-mode';
     themeIcon.href.baseVal = lightSvgTheme;
     inputSvg.href.baseVal = inputSvgLight;
     filterSvg.href.baseVal = filterSvgLight;
+    themeText.textContent = 'Light Mode';
   }
 };
 
