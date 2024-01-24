@@ -33,6 +33,15 @@ $breakpoints: (
   margin: auto;
 }
 
+@mixin m-auto2{
+  width: 90%;
+  margin: auto;
+
+  @include mq(land-phone){
+    width: 80%;
+  }
+}
+
 @mixin dflexcomp {
   display: flex;
   align-items: center;
