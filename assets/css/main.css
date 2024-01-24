@@ -365,11 +365,6 @@ main {
 .data__section--content {
   flex-basis: 54%;
 }
-@media (max-width: 39.999em) {
-  .data__section--content {
-    border: 1px solid red;
-  }
-}
 .data__section--content > p {
   font-size: 2.5rem;
   font-style: normal;

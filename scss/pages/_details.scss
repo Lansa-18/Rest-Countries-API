@@ -36,11 +36,6 @@
   &--img {
     flex-basis: 38%;
 
-    @include mq(land-phone) {
-      // flex-basis: 10%;
-      // width: 60%;
-    }
-
     img {
       width: 100%;
       display: block;
@@ -49,11 +44,6 @@
 
   &--content {
     flex-basis: 54%;
-
-    @include mq(640px) {
-      border: 1px solid red;
-      // font-size: 1rem;
-    }
 
     > p {
       font-size: 2.5rem;
