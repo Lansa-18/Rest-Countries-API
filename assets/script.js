@@ -113,7 +113,9 @@ const routingCountries = (countryData) => {
 const displayCountries = data => {
   const html = `
       <article class="country ${currentTheme}">
-          <img class="country__img" src="${data.flag}" />
+          <div class="country__img">
+          <img class="" src="${data.flag}" />
+          </div>
           <div class="country__data ${currentTheme}">
           <h3 class="country__name">${data.name}</h3>
           <p class="country__row"><span>Population:</span>${data.population.toLocaleString()}</p>
