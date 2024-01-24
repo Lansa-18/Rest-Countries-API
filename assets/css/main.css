@@ -193,13 +193,25 @@ main {
   justify-content: space-between;
   position: relative;
 }
+@media (max-width: 39.999em) {
+  .section-enquiries {
+    border: 1px solid red;
+    flex-direction: column;
+  }
+}
 .section-enquiries .enquiries-input-field {
   border-radius: 0.5rem;
   box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.05);
   width: 30%;
   display: flex;
   align-items: center;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
+}
+@media (max-width: 39.999em) {
+  .section-enquiries .enquiries-input-field {
+    width: 100%;
+    padding: 0 3.2rem;
+  }
 }
 .section-enquiries .enquiries-input-field .input-search-icon-dark {
   width: 1.5rem;
@@ -209,6 +221,24 @@ main {
   padding: 2rem 0 2rem 1rem;
   outline: none;
   width: 100%;
+}
+@media (max-width: 39.999em) {
+  .section-enquiries .enquiries-input-field .enquiries-input {
+    padding: 1.4rem 0 1.4rem 2.6rem;
+  }
+}
+.section-enquiries .enquiries-input-field .enquiries-input::placeholder {
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem;
+  color: hsl(0, 0%, 100%);
+  visibility: hidden;
+}
+@media (max-width: 39.999em) {
+  .section-enquiries .enquiries-input-field .enquiries-input::placeholder {
+    visibility: visible;
+  }
 }
 .section-enquiries .enquiries-filter {
   display: flex;
@@ -222,6 +252,11 @@ main {
   font-style: normal;
   font-weight: 400;
   transition: all 0.3s ease-in-out;
+}
+@media (max-width: 39.999em) {
+  .section-enquiries .enquiries-filter {
+    border: 1px solid white;
+  }
 }
 @media (max-width: 54.374em) {
   .section-enquiries .enquiries-filter {
