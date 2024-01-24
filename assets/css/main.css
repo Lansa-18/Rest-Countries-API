@@ -292,7 +292,6 @@ main {
 }
 .countries-grid-container .country .country__img img {
   object-fit: cover;
-  border: 1px solid red;
   position: absolute;
   top: 0;
   left: 0;
