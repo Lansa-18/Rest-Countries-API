@@ -9,25 +9,26 @@
   column-gap: 2.5rem;
 
   .country {
-    // border: 1px solid red; 
     font-size: 1.8rem;
     height: 30rem;
     border-radius: 0.7rem;
     transition: all 0.2s ease-in-out;
 
     &:hover {
-      // box-shadow: 0rem 0rem 0.7rem 0rem rgba(0, 0, 0, 0.29);
+      box-shadow: 0rem 0rem 0.7rem 0rem rgba(0, 0, 0, 0.29);
       cursor: pointer;
       transform: scale(1.04);
     }
 
     .country__img {
       width: 100%;
-      height: 13.5rem;
+      // height: 13.5rem;
       object-fit: cover;
       background-color: #eee;
       border-top-left-radius: 0.7rem;
       border-top-right-radius: 0.7rem;
+      padding-top: 56.25%;
+      position: relative;
       display: block;
     }
 
