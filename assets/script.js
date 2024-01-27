@@ -117,7 +117,7 @@ const displayCountries = data => {
   const html = `
       <article class="country ${currentTheme}">
           <div class="country__img">
-          <img class="" src="${data.flag}" />
+          <img class="" src="${data.flag}" alt="${data.name}" />
           </div>
           <div class="country__data ${currentTheme}">
           <h3 class="country__name">${data.name}</h3>
